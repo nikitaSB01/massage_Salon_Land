@@ -6,6 +6,13 @@ body {
     background: #f8f8f8;
 }
 
+.container {
+    margin: 0 auto;
+    /* max-width: 1300px; */
+    display: flex;
+    flex-direction: column;
+}
+
 /* Хедер */
 header {
     display: flex;
@@ -34,7 +41,7 @@ nav ul li a {
 .hero {
     text-align: center;
     padding: 50px;
-    background: url("../images/spa-bg.jpg") no-repeat center/cover;
+/*     background: url("../images/spa-bg.jpg") no-repeat center/cover; */
     color: rgb(0, 0, 0);
 }
 .hero p {
