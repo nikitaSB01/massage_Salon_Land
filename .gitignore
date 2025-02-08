@@ -1,0 +1,8 @@
+# Игнорируем node_modules
+node_modules/
+dist/
+.vscode/
+.idea/
+.DS_Store
+.env
+*.log
