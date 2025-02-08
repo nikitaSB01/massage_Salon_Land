@@ -1,20 +1,15 @@
-// Функция для загрузки компонентов (header и footer)
-async function includeHTML() {
-  const elements = document.querySelectorAll("[data-include]");
-  for (let el of elements) {
-    let file = el.getAttribute("data-include");
-    try {
-      let response = await fetch(file);
-      if (response.ok) {
-        el.innerHTML = await response.text();
-      } else {
-        console.error("Ошибка загрузки:", file);
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("include").forEach(async (el) => {
+    const file = el.getAttribute("src");
+    if (file) {
+      try {
+        const response = await fetch(file);
+        if (!response.ok) throw new Error(`Ошибка загрузки файла: ${file}`);
+        const content = await response.text();
+        el.outerHTML = content;
+      } catch (error) {
+        console.error(error);
       }
-    } catch (err) {
-      console.error("Ошибка:", err);
     }
-  }
-}
-
-// Загружаем header и footer при загрузке страницы
-document.addEventListener("DOMContentLoaded", includeHTML);
+  });
+});

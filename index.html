@@ -37,11 +37,11 @@
     <meta property="og:url" content="https://yourwebsite.com" />
 
     <title>Tranquility Spa | Главная</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
   </head>
   <body>
     <!-- Вставляем Header -->
-    <div data-include="/components/header.html"></div>
+    <include src="../src/components/header.html"></include>
 
     <!-- Главный баннер -->
     <section class="hero">
@@ -63,9 +63,9 @@
     <include src="./src/pages/contact.html"></include>
 
     <!-- Вставляем Footer -->
-    <div data-include="/components/footer.html"></div>
+    <include src="./src/components/footer.html"></include>
 
-    <script src="/js/main.js"></script>
-    <script src="/js/include.js"></script>
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/include.js"></script>
   </body>
 </html>
