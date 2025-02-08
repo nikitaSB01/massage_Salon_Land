@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Массажный салон: расслабление, оздоровление и уход за телом"
+    />
+    <meta
+      name="keywords"
+      content="массаж, спа, расслабление, массажный салон"
+    />
+    <meta name="author" content="Tranquility Spa" />
+    <meta property="og:title" content="Tranquility Spa - массажный салон" />
+    <meta
+      property="og:description"
+      content="Расслабляющий массаж и SPA-процедуры от лучших специалистов."
+    />
+    <meta property="og:image" content="./public/images/spa-preview.jpg" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <title>Tranquility Spa | Главная</title>
+    <link rel="stylesheet" href="./src/css/style.css" />
+  </head>
+  <body>
+    <!-- Вставляем Header -->
+    <include src="../src/components/header.html"></include>
+
+    <!-- Главный баннер -->
+    <section class="hero">
+      <h2>Расслабьтесь и насладитесь лучшими процедурами</h2>
+      <p>Добро пожаловать в наш массажный салон!</p>
+      <button>Записаться</button>
+    </section>
+
+    <!-- Блок Услуг -->
+    <include src="./src/pages/services.html"></include>
+
+    <!-- Блок Отзывов -->
+    <include src="./src/pages/reviews.html"></include>
+
+    <!-- Блок Мастеров -->
+    <include src="./src/pages/team.html"></include>
+
+    <!-- Блок Контактов -->
+    <include src="./src/pages/contact.html"></include>
+
+    <!-- Вставляем Footer -->
+    <include src="./src/components/footer.html"></include>
+
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/include.js"></script>
+  </body>
+</html>
