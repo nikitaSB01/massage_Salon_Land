@@ -1,9 +1,10 @@
 import { defineConfig } from "vite";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 export default defineConfig({
-  server: {
-    mimeTypes: {
-      "application/javascript": ["js"],
-    },
-  },
+  plugins: [
+    viteStaticCopy({
+      targets: [{ src: "src/js/include.js", dest: "js" }],
+    }),
+  ],
 });
