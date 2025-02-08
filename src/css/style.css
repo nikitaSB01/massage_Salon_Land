@@ -37,6 +37,33 @@ nav ul li a {
     background: url("../images/spa-bg.jpg") no-repeat center/cover;
     color: rgb(0, 0, 0);
 }
+.hero p {
+    margin-top: 0;
+}
+.hero button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background: linear-gradient(45deg, #ea8b2c, #ff758c);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(203, 117, 12, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+.hero button:hover {
+    background: linear-gradient(45deg, #de6d2c, #f0ff4a);
+    box-shadow: 0 6px 20px rgba(255, 80, 100, 0.5);
+    transform: translateY(-2px);
+}
+
+.hero button:active {
+    transform: scale(0.98);
+}
 
 /* Карточки услуг */
 .services {
@@ -61,7 +88,6 @@ footer {
     background: #333;
     color: white;
 }
-
 .reviews {
     text-align: center;
     padding: 40px;
@@ -70,6 +96,7 @@ footer {
 .review-slider {
     display: flex;
     justify-content: center;
+    gap: 20px;
     overflow: hidden;
     width: 50%;
     margin: 0 auto;
@@ -81,14 +108,14 @@ footer {
     background: white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    display: none;
+    /* display: none; */
 }
 
 .review.active {
     display: block;
 }
 
-button {
+.reviews button {
     margin-top: 10px;
     padding: 10px 20px;
     background: orange;
@@ -97,6 +124,8 @@ button {
 }
 
 .team {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     padding: 40px;
 }
@@ -130,6 +159,8 @@ button {
 
 .contact-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     gap: 20px;
 }
@@ -148,7 +179,7 @@ textarea {
     border-radius: 5px;
 }
 
-button {
+.contact-container button {
     padding: 10px;
     background: orange;
     border: none;
@@ -157,6 +188,8 @@ button {
 
 /* Сервис */
 .services {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     padding: 40px;
 }
@@ -179,4 +212,39 @@ button {
 .service img {
     width: 100%;
     border-radius: 10px;
+}
+
+/* MEDIA */
+/* Общие стили для мобильных устройств */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .hero {
+        padding: 20px;
+    }
+
+    .services-container,
+    .team-container,
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service,
+    .team-member,
+    form {
+        width: 90%;
+    }
+
+    .review-slider {
+        width: 90%;
+    }
 }
