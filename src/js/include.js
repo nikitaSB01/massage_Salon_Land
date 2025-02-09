@@ -13,7 +13,7 @@
   });
 }
 
-// Выполняем функцию после загрузки DOM
+// Выполняем функцию после загр DOM
 document.addEventListener("DOMContentLoaded", includeHTML);
  */
 function includeHTML() {
