@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contact-form");
 
   form.addEventListener("submit", async function (event) {
-    event.preventDefault();
+    event.preventDefault(); // Остановка стандартного поведения формы
 
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
