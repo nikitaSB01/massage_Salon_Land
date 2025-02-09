@@ -10,9 +10,9 @@ export default defineConfig({
   plugins: [
     viteStaticCopy({
       targets: [
-        /* { src: "src/pages", dest: "" }, */
-        { src: "src/components", dest: "" }, // Копируем компоненты в dist/
-        { src: "src/js/include.js", dest: "js" }, // Копируем include.js в dist/js/
+        { src: "src/components", dest: "" }, // Копируем компоненты
+        { src: "src/js/include.js", dest: "js" }, // Копируем include.js
+        { src: "src/js/service-details.js", dest: "js" }, // Добавили service-details.js
       ],
     }),
   ],
