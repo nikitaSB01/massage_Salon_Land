@@ -18,6 +18,8 @@ body {
 /* Хедер */
 header {
     position: fixed;
+    /*     height: 40px;
+ */
     width: 100%;
     top: 0;
     left: 0;
@@ -47,6 +49,7 @@ nav ul li {
 }
 
 nav ul li a {
+    font-size: 25px;
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -60,7 +63,7 @@ nav ul li a:hover {
 /* Hero */
 .hero {
     text-align: center;
-    padding: 100px 20px 50px;
+    margin: 100px 20px 50px;
     background: url("../images/spa-bg.jpg") no-repeat center/cover;
     color: white;
 }
