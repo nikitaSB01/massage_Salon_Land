@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contact-form");
+  const modal = document.getElementById("modal");
+  const modalMessage = document.getElementById("modal-message");
+  const closeModal = document.getElementById("close-modal");
 
   form.addEventListener("submit", async function (event) {
-    event.preventDefault(); // Останавливаем стандартную отправку формы
+    event.preventDefault(); // Останавливаем стандартное поведение формы !!!
 
     console.log("Форма отправляется..."); // Проверяем, срабатывает ли обработчик
 
@@ -23,12 +26,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (!response.ok) throw new Error("Ошибка при отправке формы");
 
-      alert("Спасибо! Ваша заявка отправлена.");
-      console.log("Ответ от сервера:", await response.json());
+      modalMessage.innerText = "Спасибо! Ваша заявка успешно отправлена.";
+      modal.style.display = "flex";
       form.reset();
     } catch (error) {
       console.error("Ошибка отправки формы:", error);
-      alert("Ошибка! Попробуйте позже.");
+      modalMessage.innerText = "Ошибка! Попробуйте позже.";
+      modal.style.display = "flex";
+    }
+  });
+
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
     }
   });
 });
