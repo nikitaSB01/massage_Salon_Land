@@ -255,3 +255,13 @@ textarea {
         width: 90%;
     }
 }
+
+/* Добавляем плавный ховер-эффект на карточки услуг */
+.service {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
