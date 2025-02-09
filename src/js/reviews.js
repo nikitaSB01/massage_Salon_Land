@@ -1,21 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const reviewsContainer = document.querySelector(".reviews-items");
   const reviews = document.querySelectorAll(".review");
-  let index = 0;
+  const prevBtn = document.getElementById("prevReview");
+  const nextBtn = document.getElementById("nextReview");
 
-  function showReview(i) {
-    reviews.forEach((review) => review.classList.remove("active"));
-    reviews[i].classList.add("active");
+  let index = 0;
+  const visibleReviews = 3;
+  const totalGroups = Math.ceil(reviews.length / visibleReviews);
+
+  function updateReviews() {
+    const offset = -index * (reviews[0].offsetWidth + 20) * visibleReviews;
+    reviewsContainer.style.transform = `translateX(${offset}px)`;
   }
 
-  document.getElementById("prevReview").addEventListener("click", function () {
-    index = (index - 1 + reviews.length) % reviews.length;
-    showReview(index);
+  nextBtn.addEventListener("click", () => {
+    if (index < totalGroups - 1) {
+      index++;
+      updateReviews();
+    }
   });
 
-  document.getElementById("nextReview").addEventListener("click", function () {
-    index = (index + 1) % reviews.length;
-    showReview(index);
+  prevBtn.addEventListener("click", () => {
+    if (index > 0) {
+      index--;
+      updateReviews();
+    }
   });
 
-  showReview(index);
+  updateReviews();
 });

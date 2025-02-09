@@ -33,30 +33,147 @@
   <body>
     <div class="container">
       <!-- Вставляем Header -->
-      <div data-include="./components/header.html"></div>
+      <header>
+        <nav>
+          <ul>
+            <li><a href="#hero">Главная</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#reviews">Отзывы</a></li>
+            <li><a href="#team">Мастера</a></li>
+            <li><a href="#contact">Контакты</a></li>
+          </ul>
+        </nav>
+      </header>
 
       <!-- Главный баннер -->
-      <section class="hero">
+      <section id="hero" class="hero">
         <h2>Расслабьтесь и насладитесь лучшими процедурами</h2>
         <p>Добро пожаловать в наш массажный салон!</p>
         <button>Записаться</button>
       </section>
 
       <!-- Блок Услуг -->
-      <div data-include="./pages/services.html"></div>
+      <section id="services" class="services">
+        <h2>Наши услуги</h2>
+        <div class="services-container">
+          <div class="service">
+            <img src="./public/images/thai-massage.avif" alt="Тайский массаж" />
+            <h3>Тайский массаж</h3>
+            <p>Глубокое расслабление и восстановление энергии.</p>
+          </div>
+          <div class="service">
+            <img
+              src="./public/images/relax-massage.jpeg"
+              alt="Расслабляющий массаж"
+            />
+            <h3>Расслабляющий массаж</h3>
+            <p>Идеальный способ снять стресс и усталость.</p>
+          </div>
+          <div class="service">
+            <img
+              src="./public/images/aroma-massage.webp"
+              alt="Расслабляющий массаж"
+            />
+            <h3>Ароматерапия</h3>
+            <p>Идеальный способ снять стресс и усталость.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Блок О нас -->
+      <section id="about" class="about">
+        <h2>О нас</h2>
+        <p>
+          Мы создаём атмосферу уюта и заботы, предлагая лучшие массажные услуги
+          в Москве.
+        </p>
+      </section>
 
       <!-- Блок Отзывов -->
-      <div data-include="./pages/reviews.html"></div>
+      <section id="reviews" class="reviews">
+        <h2>Отзывы наших клиентов</h2>
+        <div class="reviews-container">
+          <div class="reviews-items">
+            <div class="review">
+              <p>
+                «Отличный массаж, очень расслабляет! Спасибо мастерам за
+                профессионализм!»
+              </p>
+              <h4>- Анна К.</h4>
+            </div>
+            <div class="review">
+              <p>«Массаж был волшебный, обязательно вернусь!»</p>
+              <h4>- Олег П.</h4>
+            </div>
+            <div class="review">
+              <p>«Супер! После сеанса чувствуешь себя заново рожденным!»</p>
+              <h4>- Мария Л.</h4>
+            </div>
+            <div class="review">
+              <p>«Отличное обслуживание и уютная атмосфера!»</p>
+              <h4>- Дмитрий И.</h4>
+            </div>
+            <div class="review">
+              <p>
+                «Понравился глубокий массаж, мастер действительно профессионал.»
+              </p>
+              <h4>- Екатерина Н.</h4>
+            </div>
+            <div class="review">
+              <p>«Прекрасный салон! Буду рекомендовать друзьям!»</p>
+              <h4>- Иван Т.</h4>
+            </div>
+          </div>
+          <!-- Кнопки перелистывания -->
+          <div class="review-buttons">
+            <button id="prevReview">←</button>
+            <button id="nextReview">→</button>
+          </div>
+        </div>
+      </section>
 
       <!-- Блок Мастеров -->
-      <div data-include="./pages/team.html"></div>
+      <section id="team" class="team">
+        <h2>Наши мастера</h2>
+        <div class="team-container">
+          <div class="team-member">
+            <img src="./public/images/мастер1.jpg" alt="" />
+            <h3>Ольга Смирнова</h3>
+            <p>Специалист по тайскому и спортивному массажу.</p>
+          </div>
+          <div class="team-member">
+            <img src="./public/images/i.webp" alt="" />
+
+            <h3>Дмитрий Иванов</h3>
+            <p>Эксперт по расслабляющему массажу и SPA-процедурам.</p>
+          </div>
+          <div class="team-member">
+            <img src="./public/images/мастер3.webp" alt="" />
+
+            <h3>Данель Кибатова</h3>
+            <p>Мастер глубокого массажа и ароматерапии.</p>
+          </div>
+        </div>
+      </section>
 
       <!-- Блок Контактов -->
-      <div data-include="./pages/contact.html"></div>
+      <section id="contact" class="contact">
+        <h2>Свяжитесь с нами</h2>
+        <form id="contact-form">
+          <input type="text" name="name" placeholder="Ваше имя" required />
+          <input type="tel" name="phone" placeholder="Ваш телефон" required />
+          <textarea name="message" placeholder="Ваше сообщение"></textarea>
+          <button type="submit">Отправить</button>
+        </form>
+      </section>
 
       <!-- Вставляем Footer -->
-      <div data-include="./components/footer.html"></div>
+      <footer>
+        <p>© 2025 Tranquility Spa. Все права защищены.</p>
+      </footer>
     </div>
+    <script src="./src/js/reviews.js"></script>
     <script src="./js/include.js"></script>
   </body>
 </html>

@@ -4,49 +4,67 @@ body {
     margin: 0;
     padding: 0;
     background: #f8f8f8;
+    scroll-behavior: smooth;
 }
 
+/* Контейнер */
 .container {
     margin: 0 auto;
-    /* max-width: 1300px; */
     display: flex;
     flex-direction: column;
+    max-width: 1300px;
 }
 
 /* Хедер */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #333;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(51, 51, 51, 0.9);
     color: white;
     padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-    margin: 0 10px;
+    display: inline-block;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: orange;
 }
 
 /* Hero */
 .hero {
     text-align: center;
-    padding: 50px;
-/*     background: url("../images/spa-bg.jpg") no-repeat center/cover; */
-    color: rgb(0, 0, 0);
+    padding: 100px 20px 50px;
+    background: url("../images/spa-bg.jpg") no-repeat center/cover;
+    color: white;
 }
+
 .hero p {
     margin-top: 0;
 }
+
 .hero button {
     display: inline-block;
     padding: 12px 24px;
@@ -72,75 +90,118 @@ nav ul li a {
     transform: scale(0.98);
 }
 
-/* Карточки услуг */
-.services {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
+/* Секции */
+section {
+    padding: 80px 20px;
+    text-align: center;
 }
 
-.service-card {
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Карточки услуг */
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service {
     width: 30%;
     padding: 20px;
     background: white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     text-align: center;
+    transition:
+        transform 0.3s ease-in-out,
+        box-shadow 0.3s ease-in-out;
 }
 
-/* Футер */
-footer {
-    text-align: center;
-    padding: 10px;
-    background: #333;
-    color: white;
-}
-.reviews {
-    text-align: center;
-    padding: 40px;
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.review-slider {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    overflow: hidden;
-    width: 50%;
-    margin: 0 auto;
-}
-
-.review {
+.service img {
     width: 100%;
+    border-radius: 10px;
+}
+
+/* Контейнер отзывов */
+.reviews-container {
+    height: 420px;
+    max-width: 770px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; /* Скрываем всё, что выходит за границы */
+}
+section {
+    padding: 40px 20px;
+}
+/* Лента с отзывами */
+.reviews-items {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: fit-content; /* Автоматический расчет ширины */
+}
+
+/* Отзыв */
+.review {
+    flex: 0 0 200px; /* Фиксируем ширину карточки */
+    width: 200px;
+    height: 300px;
     padding: 20px;
-    background: white;
+    background: rgb(255, 213, 213);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    /* display: none; */
-}
-
-.review.active {
-    display: block;
-}
-
-.reviews button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: orange;
-    border: none;
-    cursor: pointer;
-}
-
-.team {
+    text-align: center;
+    margin-right: 20px; /* Отступ между карточками */
     display: flex;
     flex-direction: column;
-    text-align: center;
-    padding: 40px;
+    justify-content: center;
 }
 
+/* Кнопки перелистывания */
+.review-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.review-buttons button {
+    background: linear-gradient(45deg, #ff8c00, #ff4500);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 30px;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.review-buttons button:hover {
+    background: linear-gradient(45deg, #ff4500, #ff8c00);
+    transform: scale(1.1);
+}
+
+.review-buttons button:active {
+    transform: scale(0.95);
+}
+
+/* Команда */
 .team-container {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .team-member {
@@ -153,17 +214,12 @@ footer {
 }
 
 .team-member img {
-    max-width: 300px;
-    max-height: 300px;
+    width: 100%;
+    max-width: 250px;
     border-radius: 50%;
 }
 
 /* Контакты */
-.contact {
-    text-align: center;
-    padding: 40px;
-}
-
 .contact-container {
     display: flex;
     flex-direction: column;
@@ -180,45 +236,43 @@ form {
 
 input,
 textarea {
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 .contact-container button {
-    padding: 10px;
+    padding: 12px;
     background: orange;
     border: none;
     cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
 }
 
-/* Сервис */
-.services {
-    display: flex;
-    flex-direction: column;
+/* Футер */
+footer {
     text-align: center;
-    padding: 40px;
-}
-
-.services-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.service {
-    width: 30%;
     padding: 20px;
-    background: white;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    text-align: center;
+    background: #333;
+    color: white;
 }
 
-.service img {
-    width: 100%;
-    border-radius: 10px;
+/* Анимация появления */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.8s ease-out,
+        transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* MEDIA */
@@ -235,7 +289,7 @@ textarea {
     }
 
     .hero {
-        padding: 20px;
+        padding: 80px 20px;
     }
 
     .services-container,
@@ -254,14 +308,4 @@ textarea {
     .review-slider {
         width: 90%;
     }
-}
-
-/* Добавляем плавный ховер-эффект на карточки услуг */
-.service {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.service:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
